@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+torch
+transformers
+pillow
+requests
+python-dotenv
+pydantic
+nest-asyncio
+python-multipart
+boto3
+pymongo
+clerk-backend-api
+httpx
+starlette
+regex

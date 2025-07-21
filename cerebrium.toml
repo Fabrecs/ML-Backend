@@ -1,0 +1,46 @@
+[cerebrium.deployment]
+name = "fashion-api"
+python_version = "3.12"
+include = ["*"]
+exclude = [".*", "__pycache__", ".env", ".git"]
+shell_commands = []
+
+[cerebrium.runtime.custom]
+port = 5000
+entrypoint = ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
+healthcheck_endpoint = "/health"
+
+[cerebrium.hardware]
+cpu = 2
+memory = 16.0
+compute = "AMPERE_A10"
+gpu_count = 1
+provider = "aws"
+region = "us-east-1"
+
+[cerebrium.scaling]
+min_replicas = 0
+max_replicas = 2
+cooldown = 10
+replica_concurrency = 100
+
+[cerebrium.dependencies.pip]
+fastapi = "latest"
+uvicorn = "latest"
+torch = "latest"
+transformers = "latest" 
+pillow = "latest"
+requests = "latest"
+python-dotenv = "latest"
+pydantic = "latest"
+nest-asyncio = "latest"
+python-multipart = "latest"
+boto3 = "latest"
+pymongo = "latest"
+clerk-backend-api = "latest"
+httpx = "latest"
+starlette = "latest"
+regex = "latest"
+nvidia-cuda-runtime-cu12 = "latest"
+nvidia-cudnn-cu12 = "latest"
+accelerate = "latest" 
